@@ -1,0 +1,19 @@
+{
+  "name": "tote-calc",
+  "version": "0.1.0-SNAPSHOT",
+  "description": "A simple command line Tote calculator",
+  "main": "app/start.js",
+  "scripts": {
+    "start": "node app/start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jWilko/tote-calc.git"
+  },
+  "author": "Jono Wilkinson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jWilko/tote-calc/issues"
+  },
+  "homepage": "https://github.com/jWilko/tote-calc#readme"
+}
