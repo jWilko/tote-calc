@@ -14,11 +14,10 @@ Supports Win, Place and Exacta bets.
     - NodeJs 8.11.4 or later.
     - NPM 5.6.0 or later
 
-Start the app: `npm start`
-
-Provide [Bets](#Bets) via stdin.  This can be done many times.
- 
-Provide [Race Results](#Race-results) via stdin.
+1. Install dependencies : `npm install`
+2. Start the app: `npm start`
+3. Provide [Bets](#Bets) via stdin.  This can be done many times.
+4. Provide [Race Results](#Race-results) via stdin.
 
 The application will exit once race results are provided and dividends displayed.
 
