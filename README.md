@@ -21,7 +21,7 @@ Supports Win, Place and Exacta bets.
 
 The application will exit once race results are provided and dividends displayed.
 
-The application may be exited at any time with `CTRL+C`.
+The application may be exited at any by typing `exit`
 
 ## Input data
 
