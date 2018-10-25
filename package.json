@@ -4,7 +4,8 @@
   "description": "A simple command line Tote calculator",
   "main": "app/start.js",
   "scripts": {
-    "start": "node app/start.js"
+    "start": "node app/start.js",
+    "test": "istanbul cover _mocha --recursive 'app/**/*.spec.js'"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/jWilko/tote-calc/issues"
   },
-  "homepage": "https://github.com/jWilko/tote-calc#readme"
+  "homepage": "https://github.com/jWilko/tote-calc#readme",
+  "devDependencies": {
+    "chai": "4.2.0",
+    "istanbul": "0.4.5",
+    "mocha": "5.2.0"
+  }
 }
