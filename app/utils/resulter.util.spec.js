@@ -12,6 +12,11 @@ describe('Resulter utility', () => {
             './logger.util.js' : sinon.stub()
         };
         util = proxyquire('./resulter.util.js', dependencyStubs);
+        sinon.stub(process, 'exit');
+    });
+
+    afterEach(() => {
+        process.exit.restore();
     });
 
     describe('isInProgress()', () => {
