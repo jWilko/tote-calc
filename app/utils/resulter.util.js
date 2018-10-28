@@ -14,7 +14,7 @@ util.isInProgress = () => {
 };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-util.init = (resultLine) => {
+util.process = (resultLine) => {
     logger(`\n\nResult instruction received : ${resultLine} \n`);
     inProgress = true;
 

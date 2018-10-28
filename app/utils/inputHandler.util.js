@@ -26,7 +26,7 @@ const util = (data) => {
         betManager.addBet(data);
 
     } else if(resultRegex.test(data)) {
-        resulter.init(data);
+        resulter.process(data);
 
     } else if(data === 'exit') {
         logger(`\n\nShutting down. Total bets : ${betManager.getAllBets().length} \n\n`);

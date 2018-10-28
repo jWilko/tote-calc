@@ -17,7 +17,7 @@ describe('Input Handler utility', () => {
             },
             resulter : {
                 isInProgress : sinon.stub().returns(false),
-                init : sinon.stub()
+                process : sinon.stub()
             },
             logger : sinon.stub(),
             processExit : sinon.stub(process, 'exit')
@@ -48,7 +48,7 @@ describe('Input Handler utility', () => {
             expect(stubs.betManager.addBet.callCount).to.equal(0);
         });
         it('does not initialise another resulter', () => {
-            expect(stubs.resulter.init.callCount).to.equal(0);
+            expect(stubs.resulter.process.callCount).to.equal(0);
         });
         it('does log a message', () => {
             expect(stubs.logger.callCount).to.equal(1);
@@ -68,7 +68,7 @@ describe('Input Handler utility', () => {
                 expect(stubs.betManager.addBet.callCount).to.equal(0);
             });
             it('does not initialise a resulter', () => {
-                expect(stubs.resulter.init.callCount).to.equal(0);
+                expect(stubs.resulter.process.callCount).to.equal(0);
             });
             it('does not log a message', () => {
                 expect(stubs.logger.callCount).to.equal(0);
@@ -87,7 +87,7 @@ describe('Input Handler utility', () => {
                 expect(stubs.betManager.addBet.args[0][0]).to.equal(inputData);
             });
             it('does not initialise a resulter', () => {
-                expect(stubs.resulter.init.callCount).to.equal(0);
+                expect(stubs.resulter.process.callCount).to.equal(0);
             });
             it('does not log a message', () => {
                 expect(stubs.logger.callCount).to.equal(0);
@@ -105,8 +105,8 @@ describe('Input Handler utility', () => {
                 expect(stubs.betManager.addBet.callCount).to.equal(0);
             });
             it('does initialise a resulter', () => {
-                expect(stubs.resulter.init.callCount).to.equal(1);
-                expect(stubs.resulter.init.args[0][0]).to.equal(inputData);
+                expect(stubs.resulter.process.callCount).to.equal(1);
+                expect(stubs.resulter.process.args[0][0]).to.equal(inputData);
             });
             it('does not log a message', () => {
                 expect(stubs.logger.callCount).to.equal(0);
@@ -124,7 +124,7 @@ describe('Input Handler utility', () => {
                 expect(stubs.betManager.addBet.callCount).to.equal(0);
             });
             it('does not initialise a resulter', () => {
-                expect(stubs.resulter.init.callCount).to.equal(0);
+                expect(stubs.resulter.process.callCount).to.equal(0);
             });
             it('does log a message', () => {
                 expect(stubs.logger.callCount).to.equal(1);
@@ -142,7 +142,7 @@ describe('Input Handler utility', () => {
                 expect(stubs.betManager.addBet.callCount).to.equal(0);
             });
             it('does not initialise a resulter', () => {
-                expect(stubs.resulter.init.callCount).to.equal(0);
+                expect(stubs.resulter.process.callCount).to.equal(0);
             });
             it('does log a message', () => {
                 expect(stubs.logger.callCount).to.equal(1);

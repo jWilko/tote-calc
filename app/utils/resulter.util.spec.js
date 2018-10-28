@@ -36,26 +36,26 @@ describe('Resulter utility', () => {
             expect(util.isInProgress()).to.equal(false);
         });
         it('returns true when processing is in progress', () => {
-            util.init('Result:1:2:3');
+            util.process('Result:1:2:3');
             expect(util.isInProgress()).to.equal(true);
         });
     });
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    describe('init()', () => {
+    describe('process()', () => {
 
         it('sets inProgress flag to true', () => {
-            util.init('Result:1:2:3');
+            util.process('Result:1:2:3');
             expect(util.isInProgress()).to.equal(true);
         });
 
         it('gets the final payable pool amount from the poolManager', () => {
-            util.init('Result:1:2:3');
+            util.process('Result:1:2:3');
             expect(stubs.poolManager.getFinalPayablePools.callCount).to.equal(1);
         });
 
         it('gets all bets from the betManager', () => {
-            util.init('Result:1:2:3');
+            util.process('Result:1:2:3');
             expect(stubs.betManager.getAllBets.callCount).to.equal(1);
         });
 
@@ -121,7 +121,7 @@ describe('Resulter utility', () => {
                     }
 
                 ]);
-                util.init('Result:3:6:5');
+                util.process('Result:3:6:5');
             });
             it('calculates the WIN product result accurately', () => {
                 expect(stubs.logger.args[2][0]).to.contain('Win:3:8.50');
