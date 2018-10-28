@@ -1,7 +1,8 @@
 'use strict';
 
 class Bet {
-    constructor(betDataArray) {
+    constructor(betDataStr) {
+        const betDataArray = betDataStr.split(':');
         this.product = betDataArray[1];
         this.selection = betDataArray[2];
         this.stake = betDataArray[3];

@@ -16,7 +16,7 @@ describe('Bet model', () => {
 
     describe('on construction', () => {
         beforeEach(() => {
-            const betLine = ['Bet','e','2,3','12'];
+            const betLine = "Bet:e:2,3:45";
             model = new Model(betLine);
         });
         it('sets the product property', () => {
@@ -26,7 +26,7 @@ describe('Bet model', () => {
             expect(model.selection).to.equal('2,3');
         });
         it('sets the stake property', () => {
-            expect(model.stake).to.equal('12');
+            expect(model.stake).to.equal('45');
         });
     });
 
