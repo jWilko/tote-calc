@@ -3,5 +3,10 @@
         "win" : 0.15,
         "place" : 0.12,
         "exacta" : 0.18
+    },
+    "regex" : {
+        "bet" : "^Bet:[wpe]:\\d+(,\\d+)?:\\d+$",
+        "result" : "^Result:\\d+:\\d+:\\d+$"
     }
+
 }
