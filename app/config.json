@@ -5,7 +5,7 @@
         "exacta" : 0.18
     },
     "regex" : {
-        "bet" : "^Bet:[wpe]:\\d+(,\\d+)?:\\d+$",
+        "bet" : "^Bet:[WPE]:\\d+(,\\d+)?:\\d+$",
         "result" : "^Result:\\d+:\\d+:\\d+$"
     }
 

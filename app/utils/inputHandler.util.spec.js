@@ -79,7 +79,7 @@ describe('Input Handler utility', () => {
         });
         describe('when the data matches the Bet regex', () => {
             beforeEach(() => {
-                inputData = 'Bet:w:2:35';
+                inputData = 'Bet:W:2:35';
                 util(inputData);
             });
             it('does create a bet', () => {
