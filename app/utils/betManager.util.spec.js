@@ -10,12 +10,19 @@ describe('Bet Manager utility', () => {
 
     beforeEach(() => {
         stubs = {
-            BetModel : sinon.stub().returns({iam: 'Bet model instance'}),
+            BetModel : sinon.stub().returns({
+                product : 'w',
+                stake : 123
+            }),
+            poolManager : {
+                addBetToPool : sinon.stub()
+            },
             logger : sinon.stub()
         };
         // Stub the dependencies
         util = proxyquire('./betManager.util.js', {
             '../models/Bet.model.js' : stubs.BetModel,
+            './poolManager.util.js' : stubs.poolManager,
             './logger.util.js' : stubs.logger
         });
     });
@@ -25,7 +32,7 @@ describe('Bet Manager utility', () => {
         let testBetLine1;
 
         beforeEach(() => {
-            testBetLine1 = 'Bet:w:22:50';
+            testBetLine1 = 'a valid bet line';
             util.addBet(testBetLine1);
         });
         it('creates a Bet model instance', () => {
@@ -35,7 +42,13 @@ describe('Bet Manager utility', () => {
         it('adds the bet to the array', () => {
             const allBets = util.getAllBets();
             expect(allBets.length).to.equal(1);
-            expect(allBets[0].iam).to.equal('Bet model instance');
+            expect(allBets[0].product).to.equal('w');
+            expect(allBets[0].stake).to.equal(123);
+        });
+        it('adds the bet details to the pool', () => {
+            expect(stubs.poolManager.addBetToPool.callCount).to.equal(1);
+            expect(stubs.poolManager.addBetToPool.args[0][0]).to.equal('w');
+            expect(stubs.poolManager.addBetToPool.args[0][1]).to.equal(123);
         });
         it('creates a log message', () => {
             expect(stubs.logger.callCount).to.equal(1);
