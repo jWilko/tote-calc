@@ -1,3 +1,5 @@
 'use strict';
 
-module.exports = process.stdout.write;
+module.exports = (str) => {
+    process.stdout.write(str);
+};
