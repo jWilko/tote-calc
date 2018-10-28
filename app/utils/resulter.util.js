@@ -40,19 +40,15 @@ util.process = (resultLine) => {
     allBets.forEach((bet) => {
         if(bet.product === 'W' && bet.selection === result.first) {
             winningStake.W += bet.stake;
-        }
-        if(bet.product === 'P') {
+        } else if(bet.product === 'P') {
             if(bet.selection === result.first) {
                 winningStake.P1 +=bet.stake;
-            }
-            if(bet.selection === result.second) {
+            } else if(bet.selection === result.second) {
                 winningStake.P2 += bet.stake;
-            }
-            if(bet.selection === result.third) {
+            } else if(bet.selection === result.third) {
                 winningStake.P3 += bet.stake;
             }
-        }
-        if(bet.product === 'E' && bet.selection === result.exacta) {
+        } else if(bet.product === 'E' && bet.selection === result.exacta) {
             winningStake.E += bet.stake;
         }
     });

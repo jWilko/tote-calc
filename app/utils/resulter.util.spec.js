@@ -111,12 +111,22 @@ describe('Resulter utility', () => {
                     },
                     {
                         product:'P',
+                        selection : '9',
+                        stake: 2
+                    },
+                    {
+                        product:'P',
                         selection : '6',
                         stake: 6
                     },
                     {
                         product:'E',
                         selection : '3,6',
+                        stake: 10
+                    },
+                    {
+                        product:'E',
+                        selection : '1,6',
                         stake: 10
                     }
 
