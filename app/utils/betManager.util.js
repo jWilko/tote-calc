@@ -1,20 +1,14 @@
 'use strict';
 
 const Bet = require('../models/Bet.model.js');
+const logger = require('./logger.util.js');
 
 const util = {};
 const allBets = [];
 
-util.validateBetLine = (betLine) => {
-    // TODO : validate w/p/e & num & num
-    return true;
-};
-
 util.addBet = (betLine) => {
-    if( util.validateBetLine(betLine) ) {
-        allBets.push(new Bet(betLine));
-    }
-    return;
+    allBets.push(new Bet(betLine));
+    logger(`Bet received: ${betLine}`);
 };
 
 util.getAllBets = () => {

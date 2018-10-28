@@ -15,15 +15,8 @@ describe('Bet Manager utility', () => {
         };
         // Stub the dependencies
         util = proxyquire('./betManager.util.js', {
-            './logger.util.js' : stubs.logger,
-            '../models/Bet.model.js' : stubs.BetModel
-        });
-    });
-
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    describe('validateBetLine()', () => {
-        it('exists as a function', () => {
-            expect(typeof util.validateBetLine).to.equal('function');
+            '../models/Bet.model.js' : stubs.BetModel,
+            './logger.util.js' : stubs.logger
         });
     });
 
@@ -32,46 +25,20 @@ describe('Bet Manager utility', () => {
         let testBetLine1;
 
         beforeEach(() => {
-            testBetLine1 = ['Bet','w','2','90'];
-            sinon.stub(util, 'validateBetLine').returns(true);
-        });
-
-        afterEach(() => {
-            util.validateBetLine.restore();
-        });
-
-        it('validates the bet', () => {
+            testBetLine1 = 'Bet:w:22:50';
             util.addBet(testBetLine1);
-            expect(util.validateBetLine.callCount).to.equal(1);
-            expect(util.validateBetLine.args[0][0]).to.deep.equal(testBetLine1);
         });
-
-        describe('when the bet is valid', () => {
-            beforeEach(() => {
-                util.addBet(testBetLine1);
-            });
-            it('creates a Bet model instance', () => {
-                expect(stubs.BetModel.callCount).to.equal(1);
-                expect(stubs.BetModel.args[0][0]).to.deep.equal(testBetLine1);
-            });
-            it('adds the bet to the array', () => {
-                const allBets = util.getAllBets();
-                expect(allBets.length).to.equal(1);
-                expect(allBets[0].iam).to.equal('Bet model instance');
-            });
+        it('creates a Bet model instance', () => {
+            expect(stubs.BetModel.callCount).to.equal(1);
+            expect(stubs.BetModel.args[0][0]).to.equal(testBetLine1);
         });
-        describe('when the bet is not valid', () => {
-            beforeEach(() => {
-                util.validateBetLine.returns(false);
-                util.addBet(testBetLine1);
-            });
-            it('does not create a Bet model instance', () => {
-                expect(stubs.BetModel.callCount).to.equal(0);
-            });
-            it('does not add the bet to the array', () => {
-                const allBets = util.getAllBets();
-                expect(allBets.length).to.equal(0);
-            });
+        it('adds the bet to the array', () => {
+            const allBets = util.getAllBets();
+            expect(allBets.length).to.equal(1);
+            expect(allBets[0].iam).to.equal('Bet model instance');
+        });
+        it('creates a log message', () => {
+            expect(stubs.logger.callCount).to.equal(1);
         });
     });
 
