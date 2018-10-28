@@ -12,7 +12,7 @@ util.addBet = (betLine) => {
     const bet = new Bet(betLine);
     poolManager.addBetToPool(bet.product, bet.stake);
     allBets.push(bet);
-    logger(`Bet received: ${betLine}`);
+    logger(`Bet received: ${betLine}\n\n>`);
 };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
