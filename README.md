@@ -14,7 +14,7 @@ Supports Win, Place and Exacta bets.
     - NodeJs 8.11.4 or later.
     - NPM 5.6.0 or later
 
-1. Install dependencies : `npm install`
+1. Install test dependencies : `npm install`
 2. Start the app: `npm start`
 3. Provide [Bets](#Bets) via stdin.  This can be done many times.
 4. Provide [Race Results](#Race-results) via stdin.
@@ -51,11 +51,11 @@ Format of each payable dividend is : `<product>:<winningSelections>:<dividend>`
 
 Example output:
 
-    W:2:$2.61 # Win bet on horse 2 yields $2.61
-    P:2:$1.06 # Place bet on horse 2 yields $1.06
-    P:3:$1.27 # Place bet on horse 3 yields $1.27
-    P:1:$2.13 # Place bet on horse 1 yields $2.13
-    E:2,3:$2.43 # Exacta on horses 2,3 yields $2.43
+    Win:2:$2.61
+    Place:2:$1.06
+    Place:3:$1.27
+    Place:1:$2.13
+    Exacta:2,3:$2.43
 
 ## Testing
 
