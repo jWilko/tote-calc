@@ -124,19 +124,19 @@ describe('Resulter utility', () => {
                 util.process('Result:3:6:5');
             });
             it('calculates the WIN product result accurately', () => {
-                expect(stubs.logger.args[2][0]).to.contain('Win:3:8.50');
+                expect(stubs.logger.args[2][0]).to.contain('Win:3:$8.50');
             });
             it('calculates the PLACE-First product result accurately', () => {
-                expect(stubs.logger.args[3][0]).to.contain('Place:3:8.80');
+                expect(stubs.logger.args[3][0]).to.contain('Place:3:$8.80');
             });
             it('calculates the PLACE-Second product result accurately', () => {
-                expect(stubs.logger.args[4][0]).to.contain('Place:6:4.40');
+                expect(stubs.logger.args[4][0]).to.contain('Place:6:$4.40');
             });
             it('calculates the PLACE-Third product result accurately', () => {
-                expect(stubs.logger.args[5][0]).to.contain('Place:5:8.80');
+                expect(stubs.logger.args[5][0]).to.contain('Place:5:$8.80');
             });
             it('calculates the EXACTA product result accurately', () => {
-                expect(stubs.logger.args[6][0]).to.contain('Exacta:3,6:8.20');
+                expect(stubs.logger.args[6][0]).to.contain('Exacta:3,6:$8.20');
             });
 
         });

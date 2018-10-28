@@ -84,11 +84,11 @@ util.process = (resultLine) => {
     }
 
     logger('Results:\n\n');
-    logger(`Win:${result.first}:${dividend.W.toFixed(2)}\n`);
-    logger(`Place:${result.first}:${dividend.P1.toFixed(2)}\n`);
-    logger(`Place:${result.second}:${dividend.P2.toFixed(2)}\n`);
-    logger(`Place:${result.third}:${dividend.P3.toFixed(2)}\n`);
-    logger(`Exacta:${result.exacta}:${dividend.E.toFixed(2)}\n\n`);
+    logger(`Win:${result.first}:$${dividend.W.toFixed(2)}\n`);
+    logger(`Place:${result.first}:$${dividend.P1.toFixed(2)}\n`);
+    logger(`Place:${result.second}:$${dividend.P2.toFixed(2)}\n`);
+    logger(`Place:${result.third}:$${dividend.P3.toFixed(2)}\n`);
+    logger(`Exacta:${result.exacta}:$${dividend.E.toFixed(2)}\n\n`);
 
     process.exit(0);
 };
