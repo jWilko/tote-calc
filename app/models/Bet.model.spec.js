@@ -26,8 +26,8 @@ describe('Bet model', () => {
         it('sets the selection property', () => {
             expect(model.selection).to.equal('2,3');
         });
-        it('sets the stake property', () => {
-            expect(model.stake).to.equal('45');
+        it('sets the stake property, casting to a number', () => {
+            expect(model.stake).to.equal(45);
         });
     });
 

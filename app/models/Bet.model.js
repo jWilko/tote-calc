@@ -6,7 +6,7 @@ class Bet {
         const betDataArray = betDataStr.split(':');
         this.product = betDataArray[1];
         this.selection = betDataArray[2];
-        this.stake = betDataArray[3];
+        this.stake = Number(betDataArray[3]);
     }
 }
 
