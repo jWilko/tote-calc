@@ -1,6 +1,9 @@
 'use strict';
 
+const readline = require('readline');
 const inputHandler = require('./utils/inputHandler.util.js');
+const betManager = require('./utils/betManager.util.js');
+const logger = require('./utils/logger.util.js');
 
 let intro  = ('\n\n');
     intro += ('---------------------------------------\n');
@@ -10,6 +13,12 @@ let intro  = ('\n\n');
     intro += ('Welcome. Please provide bets or results.\n');
     intro += ('\n\n');
 
-process.stdout.write(intro);
+logger(intro);
 
-process.stdin.on('data', inputHandler);
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.prompt();
+rl.on('line', inputHandler);
