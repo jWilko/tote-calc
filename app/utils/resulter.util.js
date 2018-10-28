@@ -6,10 +6,12 @@ const util = {};
 
 let inProgress;
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 util.isInProgress = () => {
     return !!inProgress;
 };
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 util.init = (resultLine) => {
     inProgress = true;
     logger(`Result instruction received : ${resultLine} \n`);

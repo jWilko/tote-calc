@@ -19,6 +19,7 @@ describe('Resulter utility', () => {
         process.exit.restore();
     });
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     describe('isInProgress()', () => {
         it('returns false when processing is not in progress', () => {
             expect(util.isInProgress()).to.equal(false);
@@ -29,6 +30,7 @@ describe('Resulter utility', () => {
         });
     });
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     describe('init()', () => {
         it('sets inProgress flag to true', () => {
             util.init();

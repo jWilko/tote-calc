@@ -14,6 +14,7 @@ describe('Bet model', () => {
         expect(Model).to.not.equal(undefined);
     });
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     describe('on construction', () => {
         beforeEach(() => {
             const betLine = "Bet:e:2,3:45";

@@ -1,6 +1,7 @@
 'use strict';
 
 class Bet {
+
     constructor(betDataStr) {
         const betDataArray = betDataStr.split(':');
         this.product = betDataArray[1];
@@ -8,6 +9,7 @@ class Bet {
         this.stake = betDataArray[3];
         // TODO : increment pools
     }
+
 }
 
 module.exports = Bet;

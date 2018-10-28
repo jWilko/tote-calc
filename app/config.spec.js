@@ -9,6 +9,7 @@ describe('Config.json', () => {
         config = require('./config.json');
     });
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     describe('Regex patterns', () => {
 
         it('evaluate Bet strings correctly', () => {
